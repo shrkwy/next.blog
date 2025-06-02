@@ -1,4 +1,7 @@
 {
+  "holiday": 1,
+  "canada": 1,
+  "images": 1,
   "next-js": 6,
   "tailwind": 3,
   "guide": 5,
@@ -10,9 +13,6 @@
   "writings": 1,
   "book": 1,
   "reflection": 1,
-  "holiday": 1,
-  "canada": 1,
-  "images": 1,
   "markdown": 1,
   "code": 1,
   "features": 1

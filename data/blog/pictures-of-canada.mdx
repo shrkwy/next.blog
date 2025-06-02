@@ -1,10 +1,9 @@
 ---
-title: O Canada
-date: '2017-07-15'
+title: Media Example...
+date: '2025-06-02'
 tags: ['holiday', 'canada', 'images']
 draft: false
-layout: PostBanner
-images: ['/static/images/canada/mountains.jpg']
+thumbnail: '/static/images/canada/maple.jpg'
 summary: The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
 ---
 
@@ -33,9 +32,29 @@ Since we are using mdx, we can create a simple responsive flexbox grid to displa
   </div>
 </div>
 
-# Implementation
+---
 
-```js
+# Videos
+<Youtube id="lh8dNmneVyY" title="demo embed" />
+
+<br/>
+
+<Video 
+  title="sprite fight"
+  thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
+  source="https://files.vidstack.io/sprite-fight/dash/stream.mpd"
+/>
+
+
+---
+
+# Implementation of Images
+
+Its not too hard to implement these blocks in a post, just use the following available codes
+Implementation of images
+
+```jsx
 <div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
   <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
     ![Maple](/static/images/canada/maple.jpg)
@@ -52,31 +71,26 @@ Since we are using mdx, we can create a simple responsive flexbox grid to displa
 </div>
 ```
 
+---
+
+# Implementation of Embeds
+
+- ^For efficient youtube embeds `(least page load)` :
+
+```html
+<Youtube id="lh8dNmneVyY" title="demo embed" />
+```
+
+- ^For any media (hls, mpeg-dash, mp4, webm) :
+
+```html
+<Video 
+  title="sprite fight"
+  thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
+  source="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
+/>
+```
+
 With MDX v2, one can interleave markdown in jsx as shown in the example code.
-
-### Photo Credits
-
-<div>
-  Maple photo by [Guillaume
-  Jaillet](https://unsplash.com/@i_am_g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Mountains photo by [John
-  Lee](https://unsplash.com/@john_artifexfilms?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Lake photo by [Tj
-  Holowaychuk](https://unsplash.com/@tjholowaychuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
-<div>
-  Toronto photo by [Matthew
-  Henry](https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-  on
-  [Unsplash](https://unsplash.com/s/photos/canada?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</div>
+That's all for now.
