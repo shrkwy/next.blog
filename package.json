@@ -45,6 +45,7 @@
     "remark-math": "^6.0.0",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.0.5",
+    "typewriter-effect": "^2.22.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
