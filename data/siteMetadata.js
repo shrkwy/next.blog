@@ -2,11 +2,11 @@
 const siteMetadata = {
   title: 'Shan\'s Blog',
   author: 'Shan',
-  headerTitle: '@shan blog',
-  description: 'Shan\'s personal blog, based on latest javascript frameworks. Uses Next, Contentlayer and MDX.',
+  headerTitle: '@shan\'s blog',
+  description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://shantnu.eu.org',
+  siteUrl: 'https://www.shantnu.eu.org',
   siteRepo: 'https://github.com/shrkwy?tab=repositories',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
