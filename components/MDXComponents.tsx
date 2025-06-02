@@ -9,7 +9,6 @@ import Youtube from './players/Youtube'
 import { Video } from './players/Video'
 import { FamiliarTechStack } from '@/components/DevIcons'
 
-
 export const components: MDXComponents = {
   Image,
   Video,

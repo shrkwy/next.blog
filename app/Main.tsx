@@ -47,23 +47,23 @@ export default function Home({ posts }) {
         <div className="space-y-6 md:my-16">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
-              <span className="relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg before:bg-primary-600 before:bg-opacity-20 sm:inset-y-7 sm:ml-40">
-                <span className="relative inline-block -rotate-6 text-primary-500">
+              <span className="before:bg-primary-600 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
+                <span className="text-primary-500 relative inline-block -rotate-6">
                   <Link
                     href="https://youtube.com/@shrkwt"
-                    className="font-arrow2 text-sm font-bold text-primary-500 transition hover:underline hover:underline-offset-8 sm:text-xl"
+                    className="font-arrow2 text-primary-500 text-sm font-bold transition hover:underline hover:underline-offset-8 sm:text-xl"
                   >
                     @shrkwt
                   </Link>
                 </span>
               </span>
-              <h1 className="text-background-color pt-2 text-4xl font-bold leading-9 tracking-tight dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug">
+              <h1 className="text-background-color pt-2 text-4xl leading-9 font-bold tracking-tight sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug dark:text-gray-100">
                 <span className="animate-wavingHand">👋🏻</span>, I am
-                <span className="font-arrow relative inset-y-8 ml-2 inline-block -rotate-12 text-primary-500 sm:inset-y-14">
+                <span className="font-arrow text-primary-500 relative inset-y-8 ml-2 inline-block -rotate-12 sm:inset-y-14">
                   ^
                 </span>
                 <span className="absolute">
-                  Shantnu<span className="text-orange-400 ">.</span>
+                  Shantnu<span className="text-orange-400">.</span>
                 </span>
               </h1>
               <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
@@ -72,7 +72,7 @@ export default function Home({ posts }) {
               <div className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
                 <Link
                   href="/about"
-                  className="hover:cursor-pointer hover:text-primary-500 dark:text-gray-500 hover:dark:text-primary-500"
+                  className="hover:text-primary-500 hover:dark:text-primary-500 hover:cursor-pointer dark:text-gray-500"
                 >
                   <p>Read the rest of my bio &rarr;</p>
                 </Link>
@@ -103,7 +103,7 @@ export default function Home({ posts }) {
               return (
                 <article
                   key={slug}
-                  className="group relative flex h-full transform rounded-lg bg-transparent bg-opacity-20 p-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="group bg-opacity-20 relative flex h-full transform rounded-lg bg-transparent p-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <div>
                     <div className="group relative max-h-4 overflow-hidden rounded-lg pb-60">
@@ -114,20 +114,20 @@ export default function Home({ posts }) {
                             layout="fill"
                             alt={title.slice(0, 8)}
                             src={thumbnail}
-                            className="absolute inset-0 h-full w-full object-cover "
+                            className="absolute inset-0 h-full w-full object-cover"
                           />
                         </span>
                       </Link>
                     </div>
-                    <div className="h-auto py-4 px-2">
+                    <div className="h-auto px-2 py-4">
                       <span className="inline-flex w-full items-center justify-between">
-                        <span className="inline-block rounded border border-primary-500 border-gray-700 py-1 px-2 text-xs font-medium text-gray-600 dark:text-gray-400">
+                        <span className="border-primary-500 inline-block rounded border border-gray-700 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">
                           {tagsToShow.map((tag) => (
                             <Tag key={tag} text={tag} />
                           ))}
                         </span>
                         <dl>
-                          <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+                          <dd className="text-sm leading-6 font-normal text-gray-500 dark:text-gray-400">
                             <time dateTime={date}>{formatDate(date)}</time>
                           </dd>
                         </dl>
@@ -135,7 +135,7 @@ export default function Home({ posts }) {
                       <h2 className="mt-2 mb-2 font-bold md:text-xl">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-gray-800 transition duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
+                          className="hover:text-primary-500 dark:hover:text-primary-500 text-gray-800 transition duration-500 ease-in-out dark:text-gray-100"
                         >
                           {title}
                         </Link>
@@ -205,10 +205,10 @@ export default function Home({ posts }) {
       </div>
       <hr className="border-gray-200 dark:border-gray-700" />
       {posts.length > MAX_DISPLAY && (
-        <div className="mt-5 flex justify-end text-lg font-normal leading-6">
+        <div className="mt-5 flex justify-end text-lg leading-6 font-normal">
           <Link
             href="/blog"
-            className="mt-2 mr-3 rounded-lg border border-primary-500 py-1 px-3 text-sm font-medium uppercase text-primary-500 transition duration-500 ease-in-out hover:bg-primary-500 hover:text-gray-100 dark:hover:text-gray-900"
+            className="border-primary-500 text-primary-500 hover:bg-primary-500 mt-2 mr-3 rounded-lg border px-3 py-1 text-sm font-medium uppercase transition duration-500 ease-in-out hover:text-gray-100 dark:hover:text-gray-900"
             aria-label="all posts"
           >
             All Posts &rarr;

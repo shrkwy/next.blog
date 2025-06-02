@@ -387,7 +387,7 @@ export function TensorFlow() {
 
 export function NextJs() {
   return (
-    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white rounded-full">
+    <svg viewBox="0 0 128 128" height={22} width={22} className="rounded-full bg-white">
       <path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm32.7 114.4L48.4 41.8h-6.8v50.1h6.8V55.3l44.2 61.5c-8.5 4.6-18.2 7.2-28.6 7.2-33.2.1-60.1-26.8-60.1-60S30.8 3.9 64 3.9s60.1 26.9 60.1 60.1c0 21.1-10.9 39.7-27.4 50.4z"></path>
       <path d="M78.6 73.3l7.5 11.3V41.8h-7.5z"></path>
     </svg>
@@ -568,37 +568,19 @@ export function FamiliarTechStack() {
   return (
     <div className="flex flex-wrap gap-2">
       {techStack.map((t) => {
-        const Icon = DevIcons[t];
+        const Icon = DevIcons[t]
         return (
           <div
             key={t}
-            className="
-              flex items-center justify-center gap-2 
-              rounded-md border p-1 px-2 
-              font-bold text-sm md:text-base
-              transition-colors duration-150 ease-in-out
-              
-              bg-zinc-100 
-              text-zinc-700 
-              border-purple-400 
-              
-              dark:bg-zinc-800 
-              dark:text-zinc-200 
-              dark:border-purple-600
-
-              hover:bg-zinc-200
-              hover:border-purple-500
-              dark:hover:bg-zinc-700
-              dark:hover:border-purple-500
-            "
+            className="flex items-center justify-center gap-2 rounded-md border border-purple-400 bg-zinc-100 p-1 px-2 text-sm font-bold text-zinc-700 transition-colors duration-150 ease-in-out hover:border-purple-500 hover:bg-zinc-200 md:text-base dark:border-purple-600 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:border-purple-500 dark:hover:bg-zinc-700"
           >
             {t}
             <div>
               <Icon />
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
