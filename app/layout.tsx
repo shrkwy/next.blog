@@ -86,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       />
       <link rel="manifest" href={`${basePath}/static/favicons/site.webmanifest`} />
       <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="google-site-verification" content="gv0dw78xUYJJEzSEFDOwrpQPL8TdovHpRhrIwKkdkV4" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
