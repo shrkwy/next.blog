@@ -7,29 +7,113 @@ email: xeon.wolf@yandex.com
 github: https://github.com/shrkwy
 ---
 
-## About Me 👨‍💻
 import { FamiliarTechStack } from '@/components/DevIcons'
 
-Hello <span className="wave">👋</span>  
-I'm `Shantnu`, a technology enthusiast with huge interests in gaming and web development. I've recently started maintaining a blog site. I love speaking about technology with people with same interest.
+{/* ===== Hero Section with Name ===== */}
+<div className="flex items-center gap-6 mb-8">
+  <div>
+    <h1 className="text-3xl font-extrabold text-zinc-900 dark:text-zinc-100">
+      Shan Sharma <span className="wave">👋</span>
+    </h1>
+    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+      Tech Enthusiast & Hobby Coder
+    </p>
+  </div>
+</div>
 
-Currently I'm Learning to build asthetically pleasing frontends using `React` and `NextJS` frameworks along with exploring `Music` and playing `Minecraft`.
+{/* ===== Witty One-Liner ===== */}
+<blockquote className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 italic bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-md mb-8">
+  “Just a student diving headfirst into code, building random side-projects for the vibes 😅.”
+</blockquote>
 
-### Tech Stack I'm familiar with:
+{/* ===== Quick Facts (Two-Column Layout) ===== */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+  <div>
+    <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">🚀 Quick Facts</h2>
+    <ul className="list-none space-y-2 text-zinc-700 dark:text-zinc-300">
+      <li>🎓 <strong className="text-zinc-900 dark:text-zinc-100">Student Coder:</strong> Always tinkering with new languages and frameworks.</li>
+      <li>🧑‍💻 <strong className="text-zinc-900 dark:text-zinc-100">Binge-Watcher:</strong> 12–15 hours of streaming? Light work.</li>
+      <li>🐛 <strong className="text-zinc-900 dark:text-zinc-100">Bug-Squasher:</strong> Hunting that one pesky bug is my kind of cardio ☕.</li>
+      <li>🏀 <strong className="text-zinc-900 dark:text-zinc-100">Sports:</strong> Only if chasing Wi-Fi counts as exercise.</li>
+      <li>🛠️ <strong className="text-zinc-900 dark:text-zinc-100">Blog Tech:</strong> Powered by <span className="text-purple-600 dark:text-purple-400 font-medium">Next.js</span>, <span className="text-purple-600 dark:text-purple-400 font-medium">Contentlayer</span>, and <span className="text-purple-600 dark:text-purple-400 font-medium">MDX</span>—plain HTML would’ve been too boring 😎.</li>
+      <li>👉 <strong className="text-zinc-900 dark:text-zinc-100">Explore:</strong> Read a post (or two) and maybe giggle at my coding misadventures.</li>
+    </ul>
+  </div>
 
-<FamiliarTechStack />
+  <div>
+    <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">🔧 Current Passions</h2>
+    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      As a tech enthusiast, I live at the intersection of <strong className="text-purple-600 dark:text-purple-400">gaming</strong> and <strong className="text-purple-600 dark:text-purple-400">web development</strong>.  
+      I recently launched this blog to document my experiments, tutorials, and random musings.  
+      When I’m not buried in code, you’ll find me grabbing my guitar or exploring the latest Minecraft mods.
+    </p>
+    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mt-3">
+      Currently, I’m leveling up my frontend skills with <code className="bg-zinc-100 dark:bg-zinc-700 px-1 rounded text-zinc-800 dark:text-zinc-200">React</code> and <code className="bg-zinc-100 dark:bg-zinc-700 px-1 rounded text-zinc-800 dark:text-zinc-200">Next.js</code>,  
+      and occasionally geeking out over new music production techniques.
+    </p>
+  </div>
+</div>
 
-### Education 🎓
+<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
 
-**Student in APS Campus** - [2013 - current]
+{/* ===== Tech Stack Section ===== */}
+<section className="mb-8">
+  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">💻 Tech Stack I’m Familiar With</h2>
+  <div className="flex flex-wrap gap-4">
+    <FamiliarTechStack />
+  </div>
+</section>
 
-- Academically inclined towards Science and Technology.
-- Loves music and western classical guitar.
+<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
 
-### Hobbies 🎯
+{/* ===== Education Section ===== */}
+<section className="mb-8">
+  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">🎓 Education</h2>
+  <div className="overflow-x-auto">
+    <table className="w-full table-auto text-zinc-700 dark:text-zinc-300">
+      <thead>
+        <tr className="bg-zinc-100 dark:bg-zinc-800">
+          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Institution</th>
+          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Duration</th>
+          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">
+            <strong>APS Alumnus</strong>
+          </td>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">2013 – 2023</td>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300">
+            • 10 years of colors and memories from a school of diverse culture. <br />
+            • Made many friends, exposure to people across nation. <br />
+            • Topper in 10th standard (2023-24) with 96% aggregate.
+          </td>
+        </tr>
+        <tr>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">
+            <strong>DPS Alumnus</strong>
+          </td>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">2023 – Present</td>
+          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300">
+            • Student of Science stream. <br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-- Fingerstyle guitar and instrumental music.
-- Games like Minecraft.
-- Have a keen interest in top notch Anime with extraordinary concepts.
+<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
 
-<hr />
+{/* ===== Hobbies Section ===== */}
+<section className="mb-8">
+  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">🎯 Hobbies &amp; Interests</h2>
+  <ul className="list-disc list-inside space-y-2 text-zinc-700 dark:text-zinc-300">
+    <li>Fingerstyle guitar &amp; instrumental music (always chasing that perfect riff)</li>
+    <li>Gaming adventures—especially exploring new Minecraft worlds</li>
+    <li>Binge-watching top-tier anime with mind-bending storylines</li>
+  </ul>
+</section>
+
+<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />

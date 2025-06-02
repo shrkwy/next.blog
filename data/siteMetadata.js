@@ -1,31 +1,47 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  headerNotes: ['Welcome to FWOOSH', 'Fast. Free. FOSS.', 'Exploring Tech Daily'],
-  description: 'A blog created with Next.js and Tailwind.css',
+  title: 'Shan\'s Blog',
+  author: 'Shan',
+  headerTitle: '@shan blog',
+  description: 'Shan\'s personal blog, based on latest javascript frameworks. Uses Next, Contentlayer and MDX.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://shantnu.eu.org',
+  siteRepo: 'https://github.com/shrkwy?tab=repositories',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
-  mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
+
+  // mastodon: 'https://mastodon.social/@mastodonuser',
+  email: 'xeon.wolf@yandex.com',
+  github: 'https://github.com/shrkwy',
   x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  // facebook: 'https://facebook.com',
+  youtube: 'https://youtube.com/@shrkwy',
+  // linkedin: 'https://www.linkedin.com',
   threads: 'https://www.threads.net',
   instagram: 'https://www.instagram.com',
   medium: 'https://medium.com',
   bluesky: 'https://bsky.app/',
   locale: 'en-US',
+  // socialHandle defines the homepage greeting social handle.
+  socialHandle: '@shrkwy',
+  socialHandleUrl: 'https://github.com/shrkwy',
+  
+  socialDescription: [
+    "🎓 Just a student messing around with code and building random projects for the vibes 😅",
+    "🧑‍💻 Occasional binge-watcher (12 hours straight? Light work).",
+    "🐛 12–15 hours of bug fixing that solves absolutely nothing? Now *that’s* my cup of tea ☕",
+    "🏀 Sports? Nah, I sprint only when the Wi-Fi goes down.",
+    "🛠️ This blog runs on Next.js, Contentlayer, and MDX — because plain HTML would’ve made too much sense 😎",
+    "👉 Poke around, read a post or two, and maybe laugh at my suffering.",
+  ],
+  
+  // headerNotes is an array of messages to show using TypeWriter in top right.
+  headerNotes: ['Welcome buddy!', 'Fast. Free. FOSS.', 'Exploring Tech Daily'],
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
+
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

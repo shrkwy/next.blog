@@ -568,19 +568,37 @@ export function FamiliarTechStack() {
   return (
     <div className="flex flex-wrap gap-2">
       {techStack.map((t) => {
-        const Icon = DevIcons[t]
+        const Icon = DevIcons[t];
         return (
           <div
             key={t}
-            className="flex items-center justify-center gap-2 text-white rounded-md border :border-white bg-black p-1 px-2 font-bold text-sm md:text-base"
+            className="
+              flex items-center justify-center gap-2 
+              rounded-md border p-1 px-2 
+              font-bold text-sm md:text-base
+              transition-colors duration-150 ease-in-out
+              
+              bg-zinc-100 
+              text-zinc-700 
+              border-purple-400 
+              
+              dark:bg-zinc-800 
+              dark:text-zinc-200 
+              dark:border-purple-600
+
+              hover:bg-zinc-200
+              hover:border-purple-500
+              dark:hover:bg-zinc-700
+              dark:hover:border-purple-500
+            "
           >
             {t}
             <div>
               <Icon />
             </div>
           </div>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
