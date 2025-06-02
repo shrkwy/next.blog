@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
@@ -10,26 +10,42 @@ import Typewriter from 'typewriter-effect'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
+  const pathName = usePathname()
+  const isHome = pathName === '/'
+
+  // Build the raw “~/<pathname>” string.
+  const rawPathString = `~${pathName}`
+
+  // If pathName (with “~/”) is too long, truncate + ellipsis.
+  const MAX_PATH_LENGTH = 36
+  let displayPath = rawPathString
+  if (!isHome && rawPathString.length > MAX_PATH_LENGTH) {
+    // e.g. take first (MAX_PATH_LENGTH-3) chars, append "..."
+    displayPath = rawPathString.slice(0, MAX_PATH_LENGTH - 3) + '...'
+  }
+
   let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
-  const pathName = usePathname()
 
   return (
     <header className={headerClass}>
-        <Link href="/" className="flex items-center justify-center gap-1" aria-label="Homepage">
-          <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
-            {`~${pathName}`}
-            <Typewriter
-              options={{
-                strings: siteMetadata.headerNotes,
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </div>
-        </Link>
+      <Link href="/" className="flex items-center justify-center gap-1" aria-label="Homepage">
+        <div className="text-primary-color dark:text-primary-color-dark flex items-center justify-between text-xl font-semibold">
+          <Typewriter
+            options={{
+              // If on home, cycle through headerNotes; otherwise, type the truncated path once.
+              strings: isHome ? siteMetadata.headerNotes : [displayPath],
+              autoStart: true,
+              loop: isHome, // loop only on home; on other pages, type once
+              delay: 75, // speed of typing (milliseconds per char)
+              deleteSpeed: 50, // speed of deleting when looping (only affects home)
+            }}
+          />
+        </div>
+      </Link>
+
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
         <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto sm:flex md:max-w-72 lg:max-w-96">
           {headerNavLinks
