@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Shan\'s Blog',
+  title: 'Shan\'s Tech Diaries',
   author: 'Shan',
-  headerTitle: '@shan\'s blog',
+  headerTitle: '@shan\'s Tech Diaries',
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
@@ -27,7 +27,7 @@ const siteMetadata = {
   // socialHandle defines the homepage greeting social handle.
   socialHandle: '@shrkwy',
   socialHandleUrl: 'https://github.com/shrkwy',
-  
+
   socialDescription: [
     "🎓 Just a student messing around with code and building random projects for the vibes 😅",
     "🧑‍💻 Occasional binge-watcher (12 hours straight? Light work).",
@@ -36,7 +36,7 @@ const siteMetadata = {
     "🛠️ This blog runs on Next.js, Contentlayer, and MDX — because plain HTML would’ve made too much sense 😎",
     "👉 Poke around, read a post or two, and maybe laugh at my suffering.",
   ],
-  
+
   // headerNotes is an array of messages to show using TypeWriter in top right.
   headerNotes: ['Welcome buddy!', 'Fast. Free. FOSS.', 'Exploring Tech Daily'],
   // set to true if you want a navbar fixed to the top
@@ -114,6 +114,21 @@ const siteMetadata = {
     //   apiKey: '599cec31baffa4868cae4e79f180729b',
     //   indexName: 'docsearch',
     // },
+  },
+  structuredData: {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "Shan's Tech Diaries",
+    "alternateName": "Shan's Blog",
+    "url": "https://www.shantnu.eu.org/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.shantnu.eu.org/search/{search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   },
 }
 

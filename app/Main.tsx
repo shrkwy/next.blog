@@ -4,56 +4,32 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import Image from '@/components/Image'
+import Head from 'next/head'
 
 const MAX_DISPLAY = 6
 
 export default function Home({ posts }) {
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteMetadata.structuredData),
+          }}
+        />
+      </Head>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        {/* <div className="space-y-2 pt-6 pb-6 md:space-y-5">
-          <span className="relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg before:bg-primary-600 before:bg-opacity-20 sm:inset-y-7 sm:ml-40">
-            <span className="relative inline-block -rotate-6 text-primary-500">
-              <Link
-                href="https://youtube.com/@shrkwt"
-                className="font-arrow2 text-sm font-bold text-primary-500 transition hover:underline hover:underline-offset-8 sm:text-xl"
-              >
-                @shrkwt
-              </Link>
-            </span>
-          </span>
-          <h1 className="text-background-color pt-2 text-4xl font-bold leading-9 tracking-tight dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug">
-            <span className="animate-wavingHand">👋🏻</span>, I am
-            <span className="font-arrow relative inset-y-8 ml-2 inline-block -rotate-12 text-primary-500 sm:inset-y-14">
-              ^
-            </span>
-            Shantnu.
-          </h1>
-          <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
-            {siteMetadata.description}
-          </h2>
-          <div className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
-            <Link
-              href="/about"
-              className="hover:cursor-pointer hover:text-primary-500 dark:text-gray-500 hover:dark:text-primary-500"
-            >
-              <p>Read the rest of my bio &rarr;</p>
-            </Link>
-          </div>
-          <h3 className="my-4 mt-16 pt-20 pb-2 text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
-            Recent Posts{' '}
-          </h3>
-      </div>*/}
         <div className="space-y-6 md:my-16">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
               <span className="before:bg-primary-600 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
                 <span className="text-primary-500 relative inline-block -rotate-6">
                   <Link
-                    href="https://youtube.com/@shrkwt"
+                    href="https://youtube.com/@shrkwy"
                     className="font-arrow2 text-primary-500 text-sm font-bold transition hover:underline hover:underline-offset-8 sm:text-xl"
                   >
-                    @shrkwt
+                    @shrkwy
                   </Link>
                 </span>
               </span>
@@ -150,58 +126,6 @@ export default function Home({ posts }) {
             })}
           </div>
         </div>
-        {/*
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
-            return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
-                      </div>
-                      <div className="text-base font-medium leading-6">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
-        </ul> */}
       </div>
       <hr className="border-gray-200 dark:border-gray-700" />
       {posts.length > MAX_DISPLAY && (
