@@ -4,21 +4,12 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import Image from '@/components/Image'
-import Head from 'next/head'
 
 const MAX_DISPLAY = 6
 
 export default function Home({ posts }) {
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(siteMetadata.structuredData),
-          }}
-        />
-      </Head>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-6 md:my-16">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">

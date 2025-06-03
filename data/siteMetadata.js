@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Shan\'s Tech Diaries',
+  title: "Shan's Tech Diaries",
   author: 'Shan',
-  headerTitle: '@shan\'s Tech Diaries',
+  headerTitle: "@shan's Tech Diaries",
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
@@ -29,12 +29,12 @@ const siteMetadata = {
   socialHandleUrl: 'https://github.com/shrkwy',
 
   socialDescription: [
-    "🎓 Just a student messing around with code and building random projects for the vibes 😅",
-    "🧑‍💻 Occasional binge-watcher (12 hours straight? Light work).",
-    "🐛 12–15 hours of bug fixing that solves absolutely nothing? Now *that’s* my cup of tea ☕",
-    "🏀 Sports? Nah, I sprint only when the Wi-Fi goes down.",
-    "🛠️ This blog runs on Next.js, Contentlayer, and MDX — because plain HTML would’ve made too much sense 😎",
-    "👉 Poke around, read a post or two, and maybe laugh at my suffering.",
+    '🎓 Just a student messing around with code and building random projects for the vibes 😅',
+    '🧑‍💻 Occasional binge-watcher (12 hours straight? Light work).',
+    '🐛 12–15 hours of bug fixing that solves absolutely nothing? Now *that’s* my cup of tea ☕',
+    '🏀 Sports? Nah, I sprint only when the Wi-Fi goes down.',
+    '🛠️ This blog runs on Next.js, Contentlayer, and MDX — because plain HTML would’ve made too much sense 😎',
+    '👉 Poke around, read a post or two, and maybe laugh at my suffering.',
   ],
 
   // headerNotes is an array of messages to show using TypeWriter in top right.
@@ -115,20 +115,52 @@ const siteMetadata = {
     //   indexName: 'docsearch',
     // },
   },
-  structuredData: {
-    "@context": "https://schema.org/",
-    "@type": "WebSite",
-    "name": "Shan's Tech Diaries",
-    "alternateName": "Shan's Blog",
-    "url": "https://www.shantnu.eu.org/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.shantnu.eu.org/search/{search_term_string}"
+  structuredDataOrg: {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    url: 'https://www.shantnu.eu.org',
+    founder: {
+      '@type': 'Person',
+      name: 'Shantnu Sharma',
+      url: 'https://www.shantnu.eu.org/about',
+      image: 'https://www.shantnu.eu.org/static/images/avatar.jpeg',
+    },
+    sameAs: ['https://youtube.com/@shrkwy', 'https://github.com/shrkwy'],
+    logo: 'https://www.shantnu.eu.org/static/images/transparent-logo.png',
+    name: "Shan's Tech Diaries",
+    alternateName: "Shan's Blog",
+    description:
+      "Shan's Tech Diaries is a personal tech blog where Shan shares coding experiments, development insights, Minecraft modding projects, and more — built with Next.js, Contentlayer, and MDX.",
+    email: 'me@shantnu.eu.org',
+  },
+  structuredDataHomepage: {
+    '@context': 'https://schema.org/',
+    '@type': 'WebSite',
+    name: "Shan's Tech Diaries",
+    alternateName: "Shan's Blog",
+    url: 'https://www.shantnu.eu.org/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.shantnu.eu.org/search/{search_term_string}',
       },
-      "query-input": "required name=search_term_string"
-    }
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  structuredDataAboutpage: {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Shantnu Sharma',
+    url: 'https://www.shantnu.eu.org/about',
+    image: 'https://www.shantnu.eu.org/static/images/avatar.jpeg',
+    sameAs: ['https://youtube.com/@shrkwy', 'https://github.com/shrkwy'],
+    jobTitle: 'Tech Enthusiast & Hobby Coder',
+    worksFor: {
+      '@type': 'Organization',
+      name: "Shan's Tech Diaries",
+      url: 'https://www.shantnu.eu.org',
+    },
   },
 }
 

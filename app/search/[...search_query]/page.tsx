@@ -1,39 +1,35 @@
+// app/search/[...search_query]/page.tsx
+
 import { allBlogs, Blog } from 'contentlayer/generated'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import { sortPosts } from 'pliny/utils/contentlayer'
+import { CoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import projectsData from '@/data/projectsData'
-import SearchLayout from '@/layouts/SearchLayout' // Import the new SearchLayout
+import SearchLayout from '@/layouts/SearchLayout'
 
-interface SearchResult extends CoreContent<Blog> {}
+export default async function SearchPage({ params, searchParams }) {
+  // Build the search query string from the catch‐all segment
+  const query = Array.isArray(params.search_query)
+    ? params.search_query.join(' ')
+    : params.search_query || ''
 
-interface Project {
-  title: string
-  description: string
-  href?: string
-  imgSrc?: string
-}
-
-export default async function SearchPage({ params }: { params: { search_query: string[] } }) {
-  const query = params.search_query?.join(' ') || ''
-
-  const sortedBlogs = sortPosts(allBlogs)
   let pageTitle = 'Search Results'
-  let filteredPosts: SearchResult[] = []
-  let filteredProjects: Project[] = []
+  let filteredPosts: CoreContent<Blog>[] = []
+  let filteredProjects: { title: string; description: string; href?: string; imgSrc?: string }[] =
+    []
 
   if (query) {
     const lowerCaseQuery = query.toLowerCase()
 
-    // Filter blog posts
-    filteredPosts = sortedBlogs.filter(
+    // 1. Filter first, then sort only the matching posts
+    const matchingBlogs = allBlogs.filter(
       (item) =>
         item.title.toLowerCase().includes(lowerCaseQuery) ||
         (item.summary && item.summary.toLowerCase().includes(lowerCaseQuery)) ||
         item.tags?.some((tag) => tag.toLowerCase().includes(lowerCaseQuery)) ||
         item.body.raw.toLowerCase().includes(lowerCaseQuery)
     )
+    filteredPosts = sortPosts(matchingBlogs)
 
-    // Filter projects
+    // 2. Filter projects by title/description
     filteredProjects = projectsData.filter(
       (item) =>
         item.title.toLowerCase().includes(lowerCaseQuery) ||
@@ -42,12 +38,11 @@ export default async function SearchPage({ params }: { params: { search_query: s
 
     pageTitle = `Search results for: ${query}`
   } else {
+    // No query provided – prompt the user to enter one
     pageTitle = 'Enter a search query'
-    filteredPosts = []
-    filteredProjects = []
+    // filteredPosts and filteredProjects remain empty
   }
 
-  // Pass the filtered data to the client-side SearchLayout for rendering and pagination
   return (
     <SearchLayout
       posts={filteredPosts}

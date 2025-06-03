@@ -10,23 +10,24 @@ github: https://github.com/shrkwy
 import { FamiliarTechStack } from '@/components/DevIcons'
 
 {/* ===== Hero Section with Name ===== */}
-<div className="flex items-center gap-6 mb-8">
+
+<div className="mb-8 flex items-center gap-6">
   <div>
     <h1 className="text-3xl font-extrabold text-zinc-900 dark:text-zinc-100">
       Shan Sharma <span className="wave">👋</span>
     </h1>
-    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
-      Tech Enthusiast & Hobby Coder
-    </p>
+    <p className="mt-1 text-zinc-500 dark:text-zinc-400">Tech Enthusiast & Hobby Coder</p>
   </div>
 </div>
 
 {/* ===== Witty One-Liner ===== */}
-<blockquote className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 italic bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-md mb-8">
+
+<blockquote className="mb-8 rounded-md border-l-4 border-purple-600 bg-zinc-50 pl-4 text-zinc-700 italic dark:border-purple-400 dark:bg-zinc-800 dark:text-zinc-300">
   “Just a student diving headfirst into code, building random side-projects for the vibes 😅.”
 </blockquote>
 
 {/* ===== Quick Facts (Two-Column Layout) ===== */}
+
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
   <div>
     <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">🚀 Quick Facts</h2>
@@ -54,48 +55,54 @@ import { FamiliarTechStack } from '@/components/DevIcons'
   </div>
 </div>
 
-<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
+<hr className="my-8 border-t border-zinc-200 dark:border-zinc-700" />
 
 {/* ===== Tech Stack Section ===== */}
+
 <section className="mb-8">
-  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">💻 Tech Stack I’m Familiar With</h2>
+  <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+    💻 Tech Stack I’m Familiar With
+  </h2>
   <div className="flex flex-wrap gap-4">
     <FamiliarTechStack />
   </div>
 </section>
 
-<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
+<hr className="my-8 border-t border-zinc-200 dark:border-zinc-700" />
 
 {/* ===== Education Section ===== */}
+
 <section className="mb-8">
-  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">🎓 Education</h2>
+  <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">🎓 Education</h2>
   <div className="overflow-x-auto">
     <table className="w-full table-auto text-zinc-700 dark:text-zinc-300">
       <thead>
         <tr className="bg-zinc-100 dark:bg-zinc-800">
-          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Institution</th>
-          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Duration</th>
-          <th className="text-left p-3 border-b border-zinc-200 dark:border-zinc-600">Notes</th>
+          <th className="border-b border-zinc-200 p-3 text-left dark:border-zinc-600">
+            Institution
+          </th>
+          <th className="border-b border-zinc-200 p-3 text-left dark:border-zinc-600">Duration</th>
+          <th className="border-b border-zinc-200 p-3 text-left dark:border-zinc-600">Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">
+          <td className="border-b border-zinc-200 p-3 dark:border-zinc-600">
             <strong>APS Alumnus</strong>
           </td>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">2013 – 2023</td>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300">
+          <td className="border-b border-zinc-200 p-3 dark:border-zinc-600">2013 – 2023</td>
+          <td className="border-b border-zinc-200 p-3 text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
             • 10 years of colors and memories from a school of diverse culture. <br />
-            • Made many friends, exposure to people across nation. <br />
-            • Topper in 10th standard (2023-24) with 96% aggregate.
+            • Made many friends, exposure to people across nation. <br />• Topper in 10th standard
+            (2023-24) with 96% aggregate.
           </td>
         </tr>
         <tr>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">
+          <td className="border-b border-zinc-200 p-3 dark:border-zinc-600">
             <strong>DPS Alumnus</strong>
           </td>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600">2023 – Present</td>
-          <td className="p-3 border-b border-zinc-200 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300">
+          <td className="border-b border-zinc-200 p-3 dark:border-zinc-600">2023 – Present</td>
+          <td className="border-b border-zinc-200 p-3 text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
             • Student of Science stream. <br />
           </td>
         </tr>
@@ -104,16 +111,19 @@ import { FamiliarTechStack } from '@/components/DevIcons'
   </div>
 </section>
 
-<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
+<hr className="my-8 border-t border-zinc-200 dark:border-zinc-700" />
 
 {/* ===== Hobbies Section ===== */}
+
 <section className="mb-8">
-  <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">🎯 Hobbies &amp; Interests</h2>
-  <ul className="list-disc list-inside space-y-2 text-zinc-700 dark:text-zinc-300">
+  <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+    🎯 Hobbies &amp; Interests
+  </h2>
+  <ul className="list-inside list-disc space-y-2 text-zinc-700 dark:text-zinc-300">
     <li>Fingerstyle guitar &amp; instrumental music (always chasing that perfect riff)</li>
     <li>Gaming adventures—especially exploring new Minecraft worlds</li>
     <li>Binge-watching top-tier anime with mind-bending storylines</li>
   </ul>
 </section>
 
-<hr className="border-t border-zinc-200 dark:border-zinc-700 my-8" />
+<hr className="my-8 border-t border-zinc-200 dark:border-zinc-700" />
