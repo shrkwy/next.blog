@@ -11,7 +11,7 @@ const siteMetadata = {
   siteUrl: 'https://www.shantnu.eu.org',
   siteRepo: 'https://github.com/shrkwy?tab=repositories',
   siteLogo: `/static/images/organisation-logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `/static/images/twitter-card.png`,
 
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'xeon.wolf@yandex.com',
