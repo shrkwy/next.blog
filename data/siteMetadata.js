@@ -6,6 +6,7 @@ const siteMetadata = {
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
+  siteOrg: "Shan's Tech Diaries",
   siteUrl: 'https://www.shantnu.eu.org',
   siteRepo: 'https://github.com/shrkwy?tab=repositories',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
@@ -126,7 +127,7 @@ const siteMetadata = {
       image: 'https://www.shantnu.eu.org/static/images/avatar.jpeg',
     },
     sameAs: ['https://youtube.com/@shrkwy', 'https://github.com/shrkwy'],
-    logo: 'https://www.shantnu.eu.org/static/images/transparent-logo.png',
+    logo: 'https://www.shantnu.eu.org/static/images/organisation-logo.png',
     name: "Shan's Tech Diaries",
     alternateName: "Shan's Blog",
     description:
