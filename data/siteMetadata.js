@@ -2,6 +2,7 @@
 const siteMetadata = {
   title: "Shan's Tech Diaries",
   author: 'Shan',
+  authorSlug: '/about',
   headerTitle: "@shan's Tech Diaries",
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
@@ -9,7 +10,7 @@ const siteMetadata = {
   siteOrg: "Shan's Tech Diaries",
   siteUrl: 'https://www.shantnu.eu.org',
   siteRepo: 'https://github.com/shrkwy?tab=repositories',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  siteLogo: `/static/images/organisation-logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
 
   // mastodon: 'https://mastodon.social/@mastodonuser',

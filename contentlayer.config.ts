@@ -118,12 +118,23 @@ export const Blog = defineDocumentType(() => ({
       resolve: (doc) => ({
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+        },
         headline: doc.title,
         datePublished: doc.date,
         dateModified: doc.lastmod || doc.date,
         description: doc.summary,
-        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
         url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+        publisher: {
+          '@type': 'Organization',
+          name: siteMetadata.siteOrg,
+          logo: {
+            '@type': 'ImageObject',
+            url: siteMetadata.siteUrl + siteMetadata.siteLogo,
+          },
+        },
       }),
     },
   },
