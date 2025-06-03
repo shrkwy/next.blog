@@ -1,11 +1,16 @@
 ---
 title: 'Complete Markdown Guide for Writers and Developers'
 date: '2021-10-11'
-tags: ['guide', 'cheatsheet', 'documentation']
+tags:
+  - markdown
+  - guide
+  - cheatsheet
+  - documentation
 draft: false
 summary: 'An in-depth Markdown guide and cheatsheet covering all essential formatting elements. Includes explanations, examples, and rendered results based on GitHub Flavored Markdown and MDX support.'
-authors: ['default']
-thumbnail: '/static/images/thumbnail/markdown-guide.png'
+authors:
+  - default
+thumbnail: /static/images/thumbnail/markdown-guide.png
 ---
 
 # 📝 Introduction
@@ -13,10 +18,6 @@ thumbnail: '/static/images/thumbnail/markdown-guide.png'
 Markdown is a lightweight markup language that allows you to style text with plain syntax. It is widely used in blogging platforms, documentation, and code editors due to its simplicity and portability.
 
 This guide serves as a **comprehensive reference** for Markdown syntax — from headers and emphasis to code blocks and task lists. It uses **GitHub Flavored Markdown (GFM)**, enhanced with `mdx-prism` for syntax highlighting, and is compatible with systems like `next-mdx-remote` and `unified`.
-
----
-
-<TOCInline />
 
 ---
 
@@ -85,9 +86,9 @@ Use `-`, `+`, or `*`:
   - Subitem 2b
 ```
 
-- Item 1  
-- Item 2  
-  - Subitem 2a  
+- Item 1
+- Item 2
+  - Subitem 2a
   - Subitem 2b
 
 ### Ordered List
@@ -101,9 +102,9 @@ Numbered automatically:
    1. Subitem
 ```
 
-1. First  
-2. Second  
-3. Third  
+1. First
+2. Second
+3. Third
    1. Subitem
 
 ---
@@ -164,8 +165,7 @@ Use backticks to style inline code:
 
 For code blocks with highlighting:
 
-```
-js:fancyAlert.js
+```js:fancyAlert.js
 function fancyAlert(arg) {
   if (arg) {
     $.facebox({ div: '#foo' })
@@ -173,8 +173,7 @@ function fancyAlert(arg) {
 }
 ```
 
-```
-js:fancyAlert.js
+```js:fancyAlert.js
 function fancyAlert(arg) {
   if (arg) {
     $.facebox({ div: '#foo' })
@@ -210,8 +209,8 @@ Create checkboxes using list syntax:
 - [ ] Publish post
 ```
 
-- [x] Write content  
-- [ ] Review edits  
+- [x] Write content
+- [ ] Review edits
 - [ ] Publish post
 
 ---
