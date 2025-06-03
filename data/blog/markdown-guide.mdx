@@ -1,0 +1,259 @@
+---
+title: 'Complete Markdown Guide for Writers and Developers'
+date: '2021-10-11'
+tags: ['guide', 'cheatsheet', 'documentation']
+draft: false
+summary: 'An in-depth Markdown guide and cheatsheet covering all essential formatting elements. Includes explanations, examples, and rendered results based on GitHub Flavored Markdown and MDX support.'
+authors: ['default']
+thumbnail: '/static/images/thumbnail/markdown-guide.png'
+---
+
+# 📝 Introduction
+
+Markdown is a lightweight markup language that allows you to style text with plain syntax. It is widely used in blogging platforms, documentation, and code editors due to its simplicity and portability.
+
+This guide serves as a **comprehensive reference** for Markdown syntax — from headers and emphasis to code blocks and task lists. It uses **GitHub Flavored Markdown (GFM)**, enhanced with `mdx-prism` for syntax highlighting, and is compatible with systems like `next-mdx-remote` and `unified`.
+
+---
+
+<TOCInline />
+
+---
+
+# 📌 What is Markdown?
+
+Markdown lets you write rich text using a plain text editor. You style the text with characters like `#`, `*`, or `[]()` — which are then parsed into HTML or rendered as formatted content on platforms like GitHub or your blog.
+
+It's easy to learn, fast to write, and portable across platforms.
+
+---
+
+# 🧭 Syntax Guide
+
+Here’s how to use common Markdown formatting elements, with explanations and examples for each.
+
+## 🔠 Headers
+
+Use `#` followed by a space to define headings:
+
+```md
+# H1 (Main title)
+
+## H2 (Section title)
+
+### H3 (Subsection)
+
+#### H4 (Smaller heading)
+```
+
+# H1 (Main title)
+
+## H2 (Section title)
+
+### H3 (Subsection)
+
+#### H4 (Smaller heading)
+
+---
+
+## ✨ Emphasis
+
+Format text with italics, bold, or a combination of both:
+
+```md
+_Italic_ or _Italic_
+**Bold**
+_You **can** combine them_
+```
+
+_Italic_ or _Italic_  
+**Bold**  
+_You **can** combine them_
+
+---
+
+## 🔢 Lists
+
+### Unordered List
+
+Use `-`, `+`, or `*`:
+
+```md
+- Item 1
+- Item 2
+  - Subitem 2a
+  - Subitem 2b
+```
+
+- Item 1  
+- Item 2  
+  - Subitem 2a  
+  - Subitem 2b
+
+### Ordered List
+
+Numbered automatically:
+
+```md
+1. First
+2. Second
+3. Third
+   1. Subitem
+```
+
+1. First  
+2. Second  
+3. Third  
+   1. Subitem
+
+---
+
+## 🖼️ Images
+
+Embed images using `![Alt](URL)` syntax:
+
+```md
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+```
+
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+---
+
+## 🔗 Links
+
+Automatic or custom text links:
+
+```md
+http://github.com
+[GitHub](http://github.com)
+```
+
+[http://github.com](http://github.com)  
+[GitHub](http://github.com)
+
+---
+
+## 💬 Blockquotes
+
+Prefix a line with `>`:
+
+```md
+> This is a blockquote.
+> It can span multiple lines.
+```
+
+> This is a blockquote.  
+> It can span multiple lines.
+
+---
+
+## `Inline code`
+
+Use backticks to style inline code:
+
+```md
+`<div>` is a block-level element.
+```
+
+`<div>` is a block-level element.
+
+---
+
+## 🔍 Syntax Highlighting
+
+For code blocks with highlighting:
+
+```
+js:fancyAlert.js
+function fancyAlert(arg) {
+  if (arg) {
+    $.facebox({ div: '#foo' })
+  }
+}
+```
+
+```
+js:fancyAlert.js
+function fancyAlert(arg) {
+  if (arg) {
+    $.facebox({ div: '#foo' })
+  }
+}
+```
+
+---
+
+## 🦶 Footnotes
+
+Markdown can support footnotes like so:
+
+```md
+Here's a statement with a footnote.[^1]
+
+[^1]: This is the footnote text.
+```
+
+Here's a statement with a footnote.[^1]
+
+[^1]: This is the footnote text.
+
+---
+
+## ✅ Task Lists
+
+Create checkboxes using list syntax:
+
+```md
+- [x] Write content
+- [ ] Review edits
+- [ ] Publish post
+```
+
+- [x] Write content  
+- [ ] Review edits  
+- [ ] Publish post
+
+---
+
+## 📊 Tables
+
+Tables use pipes `|` and hyphens `-` to define structure:
+
+```md
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+```
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+---
+
+## ❌ Strikethrough
+
+Wrap text in double tildes `~~`:
+
+```md
+~~This text is crossed out~~
+```
+
+~~This text is crossed out~~
+
+---
+
+# 🧪 Advanced: MDX and Syntax Enhancers
+
+If you're using **MDX** (Markdown with JSX), you can embed React components directly into Markdown. Combine this with tools like `mdx-prism`, `remark-gfm`, and `rehype-slug` to supercharge your content with syntax highlighting, auto-linked headings, and more.
+
+---
+
+# 🎉 Final Notes
+
+Markdown is an incredibly effective and efficient way to write for the web. It’s readable, portable, and integrates perfectly into modern toolchains. Whether you’re documenting, blogging, or building with Next.js — mastering Markdown is a must.
+
+Feel free to copy, bookmark, or share this guide. Happy writing!

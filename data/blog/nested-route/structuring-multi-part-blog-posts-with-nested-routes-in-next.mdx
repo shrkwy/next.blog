@@ -1,0 +1,71 @@
+---
+title: Structuring Multi-Part Blog Posts with Nested Routes in Next.js
+date: '2025-05-02'
+tags: ['multi-author', 'next-js', 'feature']
+draft: false
+summary: 'Learn how to structure multi-part blog posts using nested routes in Next.js with Contentlayer. Organize your content cleanly and logically while keeping SEO in check.'
+thumbnail: '/static/images/thumbnail/structuring-multi-part-blog-posts-with-nested-routes-in-next.png'
+---
+
+---
+
+# 📚 Structuring Multi-Part Blog Posts with Nested Routes in Next.js
+
+Managing long-form or related content can get messy without proper structure. That’s why this blog template now supports **nested routing for posts**, letting you organize your content in logical sub-folders — perfect for multi-part tutorials, team blogs, or language variants.
+
+> 💡 This post itself is served from a nested route at `/data/blog/nested-route`, demonstrating exactly how it works.
+
+---
+
+## 🧱 How Nested Routing Works
+
+To enable nested routes, simply create sub-folders within your main `/data/blog` directory. Each folder can contain `.md` or `.mdx` files representing posts in that group.
+
+For example:
+
+```bash
+/data/blog/
+  nested-route/
+    index.mdx
+    part-two.mdx
+  another-series/
+    part-one.mdx
+    part-two.mdx
+```
+
+You can even go deeper:
+
+```bash
+/data/blog/nested-route/deeply-nested/my-post.md
+```
+
+This setup is powered by **Next.js catch-all dynamic routes** (`[[...slug]].tsx`), which automatically map your folder structure into accessible URLs.
+
+---
+
+## 🔄 Why Use Nested Routes?
+
+Here are a few scenarios where nested blog routing becomes extremely useful:
+
+- ✅ Logical content grouping (series, topics, categories)
+- ✅ Multi-part tutorials or long-form guides
+- ✅ Posts by different authors in their own namespaces
+- ✅ Preparing your blog for **internationalization** (although [Next.js built-in i18n](https://nextjs.org/docs/advanced-features/i18n-routing) is preferred for production)
+
+---
+
+## 📅 Sorting and Navigation
+
+By default, the blog template sorts posts by **publication date** regardless of folder. This means nested posts still appear in chronological order across the site.
+
+However, for multi-part posts, you might want to customize the logic to link to the previous/next post in the series rather than date order.
+
+> ⚠️ Currently, previous/next post links use date-based ordering. Customizing navigation for series progression is a possible enhancement.
+
+---
+
+## 🚀 Wrapping Up
+
+Nested routing gives your blog structure and scalability without losing the simplicity of Markdown content. Whether you’re launching a multi-part course or just want better content organization, this feature fits right into your existing Next.js and Contentlayer setup.
+
+Feel free to experiment and make your blog more modular!

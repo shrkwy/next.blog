@@ -7,20 +7,12 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Oxycors - A cors proxy server',
+    description: `Sick of having to deal with those annoying CORS issues when you try to stream your files?
+    Be it Hls/Dash livestream or static images, videos or scripts, let oxycors handle the rest. 
+    Headache—seamless streaming starts here! 🎥✨`,
+    imgSrc: '/static/images/project/oxycors.png',
+    href: 'https://github.com/shrkwy/oxycors',
   },
 ]
 

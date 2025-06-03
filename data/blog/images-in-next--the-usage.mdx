@@ -1,0 +1,121 @@
+---
+title: 'Images in Next.js: A Practical Guide'
+date: '2025-06-04'
+tags: ['nextjs', 'images', 'guide', 'optimization']
+draft: false
+summary: 'Learn how to use the powerful next/image component in your Next.js apps. Explore the benefits, limitations, and real-world usage examples for static, external, and MDX-based image handling.'
+authors: ['shan']
+thumbnail: 'https://picsum.photos/960/540.webp'
+---
+
+---
+
+# 🖼️ Introduction
+
+Images are a critical part of the modern web, and Next.js ships with a powerful tool for handling them: [`next/image`](https://nextjs.org/docs/app/api-reference/components/image). This built-in component offers significant performance improvements over traditional `<img>` tags by enabling automatic optimization, responsive loading, and built-in lazy loading.
+
+In this guide, we'll walk through practical usage of `next/image`, highlight its strengths, and cover a few quirks you should know.
+
+---
+
+# ⚙️ How to Use `next/image`
+
+## Static Imports
+
+The most optimized approach in Next.js is importing images statically from your project:
+
+```js
+import Image from 'next/image'
+import oceanPic from '../public/static/images/ocean.jpg'
+
+export default function Gallery() {
+  return <Image src={oceanPic} alt="Ocean View" placeholder="blur" />
+}
+```
+
+Benefits:
+
+- Automatic width/height inference
+- Generates multiple sizes and uses modern formats like WebP/AVIF
+- Enables blur-up placeholder by default
+
+## Dynamic or Remote URLs
+
+You can also load images from remote sources, but you must allow the domain in `next.config.js`:
+
+```js
+<Image src="https://example.com/images/pic.jpg" alt="Remote image" width={600} height={400} />
+```
+
+In `next.config.js`:
+
+```js
+module.exports = {
+  images: {
+    domains: ['example.com'],
+  },
+}
+```
+
+## Using in MDX
+
+If you're using MDX (Markdown with JSX), you can embed the `Image` component directly:
+
+```mdx
+import Image from 'next/image'
+
+<Image src="/static/images/sunset.jpg" alt="Sunset" width={800} height={400} />
+```
+
+Alternatively, standard Markdown image syntax works, but it will fall back to a raw `<img>` tag unless you configure a custom MDX provider to swap it.
+
+```md
+![Ocean](./static/images/ocean.jpg)
+```
+
+---
+
+# ✅ Benefits of `next/image`
+
+- 🔍 **Optimized formats:** Serves modern formats (WebP/AVIF) automatically
+- 📏 **Responsive sizing:** Delivers size-appropriate images based on device
+- 💤 **Lazy loading:** Loads images only when visible on screen
+- 📐 **Layout stability:** Helps avoid [Cumulative Layout Shift](https://web.dev/cls/) by requiring fixed dimensions
+- ⚡ **Built-in CDN integration:** Works seamlessly with Vercel’s Edge Network
+
+---
+
+# ⚠️ Limitations
+
+- 🔒 **Public Folder Only:** All local images must be stored in the `public` directory
+- 🌐 **Remote images need config:** You have to explicitly list external domains
+- 🔁 **Server dependency:** The component requires server-side logic (serverless function or custom server)
+- 🛠️ **Limited flexibility on non-Vercel platforms:** If self-hosting, you must either disable image optimization or configure your own loader/CDN
+
+```js
+// next.config.js example to disable optimization:
+images: {
+  unoptimized: true,
+}
+```
+
+---
+
+# 🧪 Experimental + Alternatives
+
+Next.js is evolving. For build-time static generation or bundler-based processing, you might consider tools like:
+
+- [`next-optimized-images`](https://github.com/cyrilwanner/next-optimized-images) _(Webpack-based)_
+- [Image CDN services like Imgix, Cloudinary, or ImageKit](https://nextjs.org/docs/pages/api-reference/components/image#loader)
+
+These offer more control, but at the cost of setup complexity.
+
+---
+
+# 📸 Final Thoughts
+
+The `next/image` component is a game-changer for modern frontend development. It's not just about image tags — it's about performance, accessibility, and developer experience.
+
+Use it when you can. Understand its boundaries. And if it doesn't suit your deployment setup, you’ve got alternatives.
+
+Happy optimizing!

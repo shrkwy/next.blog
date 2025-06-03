@@ -50,7 +50,8 @@ export function Video({ source, title, thumbnails, poster }: VideoPlayerProps) {
         title={title} // You might want to make title dynamic if available
         src={source}
         playsInline
-        autoPlay
+        load="visible"
+        posterLoad="idle"
         className="h-full w-full"
         crossOrigin // Important for HLS, especially if it involves different origins for segments/keys
         // Poster can be added here if you have a poster image URL
