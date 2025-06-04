@@ -50,7 +50,7 @@ export default function Home({ posts }) {
               {/* ── Perfectly-Circular Avatar Snippet ── */}
               <div className="relative h-20 w-20 overflow-hidden rounded-full md:h-28 md:w-28">
                 <Image
-                  src="/static/images/avatar.jpeg"
+                  src="/static/images/avatar.webp"
                   alt="Avatar image"
                   fill
                   className="object-cover"

@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   siteName: "Shan's Tech Diaries",
-  title: "Personal Insights on AI, FOSS & Cutting-Edge Tech | Shan's Tech Diaries",
+  title: "Shan's Personal Insights on AI, & Tech | Shan's Tech Diaries",
   author: 'Shan',
   authorSlug: '/about',
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
@@ -141,7 +141,7 @@ const siteMetadata = {
       '@type': 'Person',
       name: 'Shantnu Sharma',
       url: 'https://www.shantnu.eu.org/about',
-      image: 'https://www.shantnu.eu.org/static/images/avatar.jpeg',
+      image: 'https://www.shantnu.eu.org/static/images/avatar.webp',
     },
     sameAs: ['https://youtube.com/@shrkwy', 'https://github.com/shrkwy'],
     logo: 'https://www.shantnu.eu.org/static/images/organisation-logo.png',
@@ -171,7 +171,7 @@ const siteMetadata = {
     '@type': 'Person',
     name: 'Shantnu Sharma',
     url: 'https://www.shantnu.eu.org/about',
-    image: 'https://www.shantnu.eu.org/static/images/avatar.jpeg',
+    image: 'https://www.shantnu.eu.org/static/images/avatar.webp',
     sameAs: ['https://youtube.com/@shrkwy', 'https://github.com/shrkwy'],
     jobTitle: 'Tech Enthusiast & Hobby Coder',
     worksFor: {
