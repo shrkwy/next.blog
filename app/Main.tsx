@@ -11,6 +11,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        {/* Intro Section */}
         <div className="space-y-6 md:my-16">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
@@ -46,71 +47,63 @@ export default function Home({ posts }) {
               </div>
             </div>
             <div className="pt-10">
-              <div className="relative h-20 w-20 md:h-28 md:w-28">
+              {/* ── Perfectly-Circular Avatar Snippet ── */}
+              <div className="relative h-20 w-20 overflow-hidden rounded-full md:h-28 md:w-28">
                 <Image
                   src="/static/images/avatar.jpeg"
-                  className="rounded-full"
-                  width={112}
-                  height={112}
                   alt="Avatar image"
+                  fill
+                  className="object-cover"
                   loading="eager"
                   priority
                 />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-purple-700 to-orange-700 opacity-0 blur-2xl md:opacity-70" />
+                {/* Glow/gradient behind the avatar (optional) */}
+                <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tl from-purple-700 to-orange-700 opacity-0 blur-2xl md:opacity-70" />
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <div className="grid grid-cols-1 gap-8 pt-10 pb-10 md:grid-cols-2 xl:grid-cols-3">
-            {!posts.length && 'No posts found.'}
+
+        {/* Blog Posts Section */}
+        <div className="pt-10 pb-10">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags, thumbnail } = frontMatter
               const tagsToShow = tags.slice(0, 1)
               return (
                 <article
                   key={slug}
-                  className="group bg-opacity-20 relative flex h-full transform rounded-lg bg-transparent p-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:border-gray-700 dark:bg-gray-900"
                 >
-                  <div>
-                    <div className="group relative max-h-4 overflow-hidden rounded-lg pb-60">
-                      <Link href={`/blog/${slug}`}>
-                        <span>
-                          <Image
-                            objectFit="cover"
-                            layout="fill"
-                            alt={title.slice(0, 8)}
-                            src={thumbnail}
-                            className="absolute inset-0 h-full w-full object-cover"
-                          />
-                        </span>
-                      </Link>
+                  <Link href={`/blog/${slug}`} className="block">
+                    <div className="flex h-48 w-full items-center justify-center overflow-hidden bg-gray-100 dark:bg-gray-800">
+                      <Image
+                        src={thumbnail}
+                        alt={title}
+                        width={400}
+                        height={200}
+                        className="h-full w-auto object-contain"
+                      />
                     </div>
-                    <div className="h-auto px-2 py-4">
-                      <span className="inline-flex w-full items-center justify-between">
-                        <span className="border-primary-500 inline-block rounded border border-gray-700 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400">
-                          {tagsToShow.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
-                        </span>
-                        <dl>
-                          <dd className="text-sm leading-6 font-normal text-gray-500 dark:text-gray-400">
-                            <time dateTime={date}>{formatDate(date)}</time>
-                          </dd>
-                        </dl>
+                  </Link>
+                  <div className="flex flex-grow flex-col justify-between space-y-2 px-4 py-4">
+                    <span className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                      <span className="inline-block">
+                        {tagsToShow.map((tag) => (
+                          <Tag key={tag} text={tag} />
+                        ))}
                       </span>
-                      <h2 className="mt-2 mb-2 font-bold md:text-xl">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="hover:text-primary-500 dark:hover:text-primary-500 text-gray-800 transition duration-500 ease-in-out dark:text-gray-100"
-                        >
-                          {title}
-                        </Link>
-                      </h2>
-                      <p className="h-auto text-sm font-normal tracking-wide text-gray-500 dark:text-gray-400">
-                        {summary}
-                      </p>
-                    </div>
+                      <time dateTime={date}>{formatDate(date)}</time>
+                    </span>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                      <Link
+                        href={`/blog/${slug}`}
+                        className="hover:text-primary-500 dark:hover:text-primary-400"
+                      >
+                        {title}
+                      </Link>
+                    </h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{summary}</p>
                   </div>
                 </article>
               )
@@ -118,18 +111,21 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
+
+      {/* Footer section */}
       <hr className="border-gray-200 dark:border-gray-700" />
       {posts.length > MAX_DISPLAY && (
-        <div className="mt-5 flex justify-end text-lg leading-6 font-normal">
+        <div className="mt-5 flex justify-end">
           <Link
             href="/blog"
-            className="border-primary-500 text-primary-500 hover:bg-primary-500 mt-2 mr-3 rounded-lg border px-3 py-1 text-sm font-medium uppercase transition duration-500 ease-in-out hover:text-gray-100 dark:hover:text-gray-900"
+            className="border-primary-500 text-primary-500 hover:bg-primary-500 mt-2 mr-3 rounded-lg border px-3 py-1 text-sm font-medium uppercase transition hover:text-white dark:hover:text-gray-900"
             aria-label="all posts"
           >
             All Posts &rarr;
           </Link>
         </div>
       )}
+
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
