@@ -56,40 +56,40 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             </div>
           </header>
           <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0 dark:divide-gray-700">
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
-              <dt className="sr-only">Authors</dt>
-              <dd>
-                <ul className="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-y-8 xl:space-x-0">
-                  {authorDetails.map((author) => (
-                    <li className="flex items-center space-x-2" key={author.name}>
-                      {author.avatar && (
-                        <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                          <Image src={author.avatar} alt="avatar" fill className="object-cover" />
-                        </div>
-                      )}
+          <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+  <dt className="sr-only">Authors</dt>
+  <dd>
+    <ul className="flex flex-wrap justify-center gap-4 xl:block xl:space-y-4">
+      {authorDetails.map((author) => (
+        <li className="flex items-center gap-2" key={author.name}>
+          {author.avatar && (
+            <div className="relative h-12 w-12 overflow-hidden rounded-full">
+              <Image
+                src={author.avatar}
+                alt={author.name}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+          <div className="flex flex-col">
+            <p className="text-lg font-semibold text-gray-100 dark:text-gray-100">
+              {author.name}
+            </p>
+            {author.twitter && (
+              <p className="text-sm text-gray-400 dark:text-gray-500">
+                {author.twitter
+                  .replace('https://twitter.com/', '@')
+                  .replace('https://x.com/', '@')}
+              </p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </dd>
+</dl>
 
-                      <dl className="text-sm leading-5 font-medium whitespace-nowrap">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            >
-                              {author.twitter
-                                .replace('https://twitter.com/', '@')
-                                .replace('https://x.com/', '@')}
-                            </Link>
-                          )}
-                        </dd>
-                      </dl>
-                    </li>
-                  ))}
-                </ul>
-              </dd>
-            </dl>
             <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0 dark:divide-gray-700">
               <div className="prose dark:prose-invert max-w-none pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
@@ -122,30 +122,29 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     </div>
                   </div>
                 )}
-                {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+                <div className="py-6 xl:py-8">
+                  <h2 className="mb-2 text-base font-semibold text-gray-200 dark:text-gray-100">
+                    Wanna read more? Check out:
+                  </h2>
+                  <div className="flex flex-col gap-3">
                     {prev && prev.path && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Previous Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${prev.path}`}>{prev.title}</Link>
-                        </div>
-                      </div>
+                      <Link
+                        href={`/${prev.path}`}
+                        className="text-primary-400 hover:bg-primary-600 block rounded-lg border border-gray-700 bg-gray-900 px-4 py-2 transition hover:text-white"
+                      >
+                        ← {prev.title}
+                      </Link>
                     )}
                     {next && next.path && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Next Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${next.path}`}>{next.title}</Link>
-                        </div>
-                      </div>
+                      <Link
+                        href={`/${next.path}`}
+                        className="text-primary-400 hover:bg-primary-600 block rounded-lg border border-gray-700 bg-gray-900 px-4 py-2 transition hover:text-white"
+                      >
+                        {next.title} →
+                      </Link>
                     )}
                   </div>
-                )}
+                </div>
               </div>
               <div className="pt-4 xl:pt-8">
                 <Link
