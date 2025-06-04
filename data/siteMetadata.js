@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   siteName: "Shan's Tech Diaries",
-  title: "Shan’s Tech Diaries – Personal Insights on AI, FOSS & Cutting-Edge Tech",
+  title: "Personal Insights on AI, FOSS & Cutting-Edge Tech | Shan's Tech Diaries",
   author: 'Shan',
   authorSlug: '/about',
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
@@ -40,7 +40,23 @@ const siteMetadata = {
   ],
 
   // headerNotes is an array of messages to show using TypeWriter in top right.
-  headerNotes: ['Welcome buddy!', 'Fast. Free. FOSS.', 'Exploring Tech Daily'],
+  headerNotes: [
+    "<span class='text-green-500 font-semibold'>👋 Hey there, tech explorer!</span>",
+    "<span class='italic text-gray-400'>Did you know: Linux was first released in 1991? 🐧</span>",
+    "<span class='text-yellow-400 font-bold'>404: Boredom Not Found.</span>",
+    "<span class='font-bold text-pink-500'>Open-source the sauce, baby 🍜</span>",
+    "<span>When your code compiles on the first try… is it a bug? 🤔</span>",
+    "<span class='text-blue-400'>No clickbait. Just byte-sized wisdom 💾</span>",
+    "<span class='underline text-purple-500'>Your browser called—it loves this site.</span>",
+    "<span class='text-red-400'>Finally, a blog that actually slaps. 🔥</span>",
+    "<span class='text-indigo-600'>Tech moves fast—blink and you'll miss it! ⚡️</span>",
+    "<span class='text-green-600'>Built with caffeine, sarcasm, and curiosity ☕️</span>",
+    "<span class='text-orange-500'>Pros vs. Cons: Is Vim superior? Debate starts now. 😏</span>",
+    "<span class='text-teal-400'>This is that blog your future self reads. 🕒</span>",
+    "<span class='text-red-500'>You scrolled here. I see you—welcome. 👀</span>",
+    "<span class='text-purple-600'>No trackers, no BS—just raw tech truth.</span>",
+    "<span class='text-yellow-500'>All killer, no filler. 🚀</span>"
+  ],  
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
 

@@ -42,7 +42,7 @@ const Header = () => {
           <Typewriter
             options={{
               // If on home, cycle through headerNotes; otherwise, type the truncated path once.
-              strings: isHome ? siteMetadata.headerNotes : [displayPath],
+              strings: isHome ? siteMetadata.headerNotes : displayPath,
               autoStart: true,
               loop: isHome, // loop only on home; on other pages, type once
               delay: 75, // speed of typing (milliseconds per char)
