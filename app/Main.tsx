@@ -12,7 +12,7 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         {/* Intro Section */}
-        <div className="space-y-6 md:my-16">
+        <div className="mt-16 mb-[14px] space-y-6">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
               <span className="before:bg-primary-900 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
@@ -66,6 +66,9 @@ export default function Home({ posts }) {
 
         {/* Blog Posts Section */}
         <div className="pt-10 pb-10">
+          <h1 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+            Posts by {siteMetadata.author} —``
+          </h1>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags, thumbnail } = frontMatter
@@ -73,7 +76,7 @@ export default function Home({ posts }) {
               return (
                 <article
                   key={slug}
-                  className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:border-gray-700 dark:bg-gray-900"
+                  className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-lg md:border-none md:bg-transparent md:hover:border md:hover:border-gray-200 md:hover:bg-white dark:border-gray-700 dark:bg-gray-900 md:dark:bg-transparent md:hover:dark:border-gray-700 md:hover:dark:bg-gray-900"
                 >
                   <Link href={`/blog/${slug}`} className="block">
                     <div className="flex h-48 w-full items-center justify-center overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -87,7 +90,7 @@ export default function Home({ posts }) {
                     </div>
                   </Link>
                   <div className="flex flex-grow flex-col justify-between space-y-2 px-4 py-4">
-                    <span className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                    <span className="inline-flex w-full items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                       <span className="inline-block">
                         {tagsToShow.map((tag) => (
                           <Tag key={tag} text={tag} />

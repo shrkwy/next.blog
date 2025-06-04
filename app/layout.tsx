@@ -2,7 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import { Space_Grotesk } from 'next/font/google'
+import { Sora, Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
@@ -12,8 +12,9 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 
-const space_grotesk = Space_Grotesk({
+const space_grotesk = Sora({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-space-grotesk',
 })
@@ -68,33 +69,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <head>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={`${basePath}/static/favicons/apple-touch-icon.png`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href={`${basePath}/static/favicons/favicon-32x32.png`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href={`${basePath}/static/favicons/favicon-16x16.png`}
-      />
-      <link rel="manifest" href={`${basePath}/static/favicons/site.webmanifest`} />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="google-site-verification" content="gv0dw78xUYJJEzSEFDOwrpQPL8TdovHpRhrIwKkdkV4" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteMetadata.structuredDataOrg) }}
-      />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`${basePath}/static/favicons/apple-touch-icon.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${basePath}/static/favicons/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${basePath}/static/favicons/favicon-16x16.png`}
+        />
+        <link rel="manifest" href={`${basePath}/static/favicons/site.webmanifest`} />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta
+          name="google-site-verification"
+          content="gv0dw78xUYJJEzSEFDOwrpQPL8TdovHpRhrIwKkdkV4"
+        />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+        <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteMetadata.structuredDataOrg) }}
+        />
       </head>
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
