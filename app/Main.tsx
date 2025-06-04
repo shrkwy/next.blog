@@ -14,13 +14,13 @@ export default function Home({ posts }) {
         <div className="space-y-6 md:my-16">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
-              <span className="before:bg-primary-600 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
+              <span className="before:bg-primary-900 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
                 <span className="text-primary-500 relative inline-block -rotate-6">
                   <Link
-                    href="https://youtube.com/@shrkwy"
+                    href={siteMetadata.socialHandleUrl}
                     className="font-arrow2 text-primary-500 text-sm font-bold transition hover:underline hover:underline-offset-8 sm:text-xl"
                   >
-                    @shrkwy
+                    {siteMetadata.socialHandle}
                   </Link>
                 </span>
               </span>
@@ -34,7 +34,7 @@ export default function Home({ posts }) {
                 </span>
               </h1>
               <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
-                {siteMetadata.description}
+                {siteMetadata.title + ": " + siteMetadata.description}
               </h2>
               <div className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
                 <Link
