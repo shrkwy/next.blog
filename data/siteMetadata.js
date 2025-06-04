@@ -45,7 +45,7 @@ const siteMetadata = {
     "<span class='italic text-gray-400'>Did you know: Linux was first released in 1991? 🐧</span>",
     "<span class='text-yellow-400 font-bold'>404: Boredom Not Found.</span>",
     "<span class='font-bold text-pink-500'>Open-source the sauce, baby 🍜</span>",
-    "<span>When your code compiles on the first try… is it a bug? 🤔</span>",
+    '<span>When your code compiles on the first try… is it a bug? 🤔</span>',
     "<span class='text-blue-400'>No clickbait. Just byte-sized wisdom 💾</span>",
     "<span class='underline text-purple-500'>Your browser called—it loves this site.</span>",
     "<span class='text-red-400'>Finally, a blog that actually slaps. 🔥</span>",
@@ -55,8 +55,8 @@ const siteMetadata = {
     "<span class='text-teal-400'>This is that blog your future self reads. 🕒</span>",
     "<span class='text-red-500'>You scrolled here. I see you—welcome. 👀</span>",
     "<span class='text-purple-600'>No trackers, no BS—just raw tech truth.</span>",
-    "<span class='text-yellow-500'>All killer, no filler. 🚀</span>"
-  ],  
+    "<span class='text-yellow-500'>All killer, no filler. 🚀</span>",
+  ],
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
 

@@ -6,8 +6,10 @@ import projectsData from '@/data/projectsData'
 import SearchLayout from '@/layouts/SearchLayout'
 import { genPageMetadata } from 'app/seo'
 
-export const metadata = genPageMetadata({ title: `Search all across Shan's Tech Diaries.`, description: "" })
-
+export const metadata = genPageMetadata({
+  title: `Search all across Shan's Tech Diaries.`,
+  description: '',
+})
 
 export default async function SearchPage({ params, searchParams }) {
   // Build the search query string from the catch‐all segment

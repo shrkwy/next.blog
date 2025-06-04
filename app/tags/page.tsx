@@ -4,7 +4,11 @@ import { slug } from 'github-slugger'
 import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 
-export const metadata = genPageMetadata({ title: "Tag Index – Browse by topic", description: "Dive into curated tech topics from Shan’s Tech Diaries. Use this tag index to explore blog posts by category—from open source tools and developer guides to AI trends and tech culture. Find exactly what interests you, faster." })
+export const metadata = genPageMetadata({
+  title: 'Tag Index – Browse by topic',
+  description:
+    'Dive into curated tech topics from Shan’s Tech Diaries. Use this tag index to explore blog posts by category—from open source tools and developer guides to AI trends and tech culture. Find exactly what interests you, faster.',
+})
 
 export default async function Page() {
   const tagCounts = tagData as Record<string, number>

@@ -34,7 +34,7 @@ export default function Home({ posts }) {
                 </span>
               </h1>
               <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
-                {siteMetadata.siteName + ": " + siteMetadata.description}
+                {siteMetadata.siteName + ': ' + siteMetadata.description}
               </h2>
               <div className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
                 <Link
