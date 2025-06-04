@@ -1,3 +1,5 @@
+export const runtime = 'edge'; // 'nodejs' is the default, revert if facing any issues.
+
 import { NewsletterAPI } from 'pliny/newsletter'
 import siteMetadata from '@/data/siteMetadata'
 

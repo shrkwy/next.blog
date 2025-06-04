@@ -12,6 +12,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 
+
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
@@ -21,15 +22,15 @@ const space_grotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
+    default: siteMetadata.siteName,
+    template: `%s | ${siteMetadata.siteName}`,
   },
   description: siteMetadata.description,
   openGraph: {
-    title: siteMetadata.title,
+    title: siteMetadata.siteName,
     description: siteMetadata.description,
     url: './',
-    siteName: siteMetadata.title,
+    siteName: siteMetadata.siteName,
     images: [siteMetadata.socialBanner],
     locale: 'en_US',
     type: 'website',
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: siteMetadata.title,
+    title: siteMetadata.siteName,
     card: 'summary_large_image',
     images: [siteMetadata.socialBanner],
   },

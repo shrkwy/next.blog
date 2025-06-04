@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: "Shan's Tech Diaries",
+  siteName: "Shan's Tech Diaries",
+  title: "Shan’s Tech Diaries – Personal Insights on AI, FOSS & Cutting-Edge Tech",
   author: 'Shan',
   authorSlug: '/about',
-  headerTitle: "@shan's Tech Diaries",
   description: `Discover Shan Sharma’s cozy corner—powered by Next.js, Contentlayer & MDX—for playful side-projects, bug-squashing tales, Minecraft mod experiments, and musical musings in a laid-back coding vibe.`,
   language: 'en-us',
   theme: 'system', // system, dark or light
