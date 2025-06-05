@@ -15,39 +15,48 @@ export default function Home({ posts }) {
         <div className="mt-16 mb-[14px] space-y-6">
           <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
             <div className="space-y-4 md:max-w-lg">
-              <span className="before:bg-primary-900 before:bg-opacity-20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
-                <span className="text-primary-500 relative inline-block -rotate-6">
+              {/* Social Handle */}
+              <span className="before:bg-primary-900/20 dark:before:bg-primary-300/20 relative inset-y-4 ml-24 inline-block px-1 before:absolute before:-inset-1 before:block before:-skew-y-6 before:rounded-lg sm:inset-y-7 sm:ml-40">
+                <span className="text-primary-500 dark:text-primary-400 relative inline-block -rotate-6">
                   <Link
                     href={siteMetadata.socialHandleUrl}
-                    className="font-arrow2 text-primary-500 text-sm font-bold transition hover:underline hover:underline-offset-8 sm:text-xl"
+                    className="font-arrow2 text-primary-500 dark:text-primary-400 text-sm font-bold transition hover:underline hover:underline-offset-8 sm:text-xl"
                   >
                     {siteMetadata.socialHandle}
                   </Link>
                 </span>
               </span>
-              <h1 className="text-background-color pt-2 text-4xl leading-9 font-bold tracking-tight sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug dark:text-gray-100">
+
+              {/* Main Heading */}
+              <h1 className="pt-2 text-4xl leading-9 font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-10 md:text-6xl md:leading-snug dark:text-gray-100">
                 <span className="animate-wavingHand">👋🏻</span>, I am
-                <span className="font-arrow text-primary-500 relative inset-y-8 ml-2 inline-block -rotate-12 sm:inset-y-14">
+                <span className="font-arrow text-primary-500 dark:text-primary-400 relative inset-y-8 ml-2 inline-block -rotate-12 sm:inset-y-14">
                   ^
                 </span>
                 <span className="absolute">
-                  Shantnu<span className="text-orange-400">.</span>
+                  Shantnu
+                  <span className="text-orange-600 dark:text-orange-400">.</span>
                 </span>
               </h1>
-              <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
+
+              {/* Subtitle */}
+              <h2 className="pt-5 text-lg text-gray-700 dark:text-gray-300">
                 {siteMetadata.siteName + ': ' + siteMetadata.description}
               </h2>
-              <div className="leading-7 text-gray-500 underline underline-offset-4 sm:pr-6 sm:text-lg">
+
+              {/* Bio Link */}
+              <div className="leading-7 text-gray-600 underline underline-offset-4 sm:pr-6 sm:text-lg dark:text-gray-400">
                 <Link
                   href="/about"
-                  className="hover:text-primary-500 hover:dark:text-primary-500 hover:cursor-pointer dark:text-gray-500"
+                  className="hover:text-primary-500 hover:dark:text-primary-400 hover:cursor-pointer"
                 >
                   <p>Read the rest of my bio &rarr;</p>
                 </Link>
               </div>
             </div>
+
+            {/* Avatar */}
             <div className="pt-10">
-              {/* ── Perfectly-Circular Avatar Snippet ── */}
               <div className="relative h-20 w-20 overflow-hidden rounded-full md:h-28 md:w-28">
                 <Image
                   src="/static/images/avatar.webp"
@@ -57,8 +66,7 @@ export default function Home({ posts }) {
                   loading="eager"
                   priority
                 />
-                {/* Glow/gradient behind the avatar (optional) */}
-                <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tl from-purple-700 to-orange-700 opacity-0 blur-2xl md:opacity-70" />
+                <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tl from-purple-500 to-orange-400 opacity-40 blur-2xl md:opacity-70 dark:from-purple-700 dark:to-orange-700" />
               </div>
             </div>
           </div>
